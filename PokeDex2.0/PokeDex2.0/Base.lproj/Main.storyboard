@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pokemon View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PokemonViewController" customModule="PokeDex2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eXF-Gd-RKt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yar-jI-pgy"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-tp-NZc">
+                                <rect key="frame" x="278" y="136" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCU-MV-eHd">
+                                <rect key="frame" x="292" y="176" width="16.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njv-3Z-4Vq">
+                                <rect key="frame" x="270" y="219" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pAb-FU-6In">
+                                <rect key="frame" x="180" y="354" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="B68-Xa-gU9"/>
+                                    <constraint firstAttribute="width" constant="240" id="CGf-zQ-6Xy"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aCU-MV-eHd" firstAttribute="top" secondItem="fBI-tp-NZc" secondAttribute="bottom" constant="19" id="5UJ-UB-70V"/>
+                            <constraint firstItem="aCU-MV-eHd" firstAttribute="centerX" secondItem="eXF-Gd-RKt" secondAttribute="centerX" id="8ot-hL-VnE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pAb-FU-6In" secondAttribute="bottom" constant="118" id="AIb-A6-1WM"/>
+                            <constraint firstItem="Njv-3Z-4Vq" firstAttribute="centerX" secondItem="aCU-MV-eHd" secondAttribute="centerX" id="Aid-ms-0AE"/>
+                            <constraint firstItem="Njv-3Z-4Vq" firstAttribute="top" secondItem="aCU-MV-eHd" secondAttribute="bottom" constant="22" id="CBU-mW-uVx"/>
+                            <constraint firstItem="eXF-Gd-RKt" firstAttribute="centerX" secondItem="pAb-FU-6In" secondAttribute="centerX" id="FpE-Yx-tIv"/>
+                            <constraint firstItem="aCU-MV-eHd" firstAttribute="centerX" secondItem="fBI-tp-NZc" secondAttribute="centerX" id="HyP-4o-h0K"/>
+                            <constraint firstItem="eXF-Gd-RKt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JK6-nq-Xnb"/>
+                            <constraint firstItem="fBI-tp-NZc" firstAttribute="top" secondItem="eXF-Gd-RKt" secondAttribute="bottom" constant="72" id="KDZ-bb-liG"/>
+                            <constraint firstItem="pAb-FU-6In" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZIG-TI-Iec"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pAb-FU-6In" secondAttribute="trailing" constant="160" id="hpB-zV-hWC"/>
+                            <constraint firstItem="eXF-Gd-RKt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lhQ-OJ-xMu"/>
+                            <constraint firstAttribute="trailing" secondItem="eXF-Gd-RKt" secondAttribute="trailing" id="xuV-RH-gWw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AbilitiesLabel" destination="Njv-3Z-4Vq" id="zoJ-ie-aYn"/>
+                        <outlet property="IDLabel" destination="aCU-MV-eHd" id="ocu-DJ-Uk6"/>
+                        <outlet property="PokemonImageView" destination="pAb-FU-6In" id="6Wp-wu-9rL"/>
+                        <outlet property="nameLabel" destination="fBI-tp-NZc" id="Eh7-Zg-3L3"/>
+                        <outlet property="searchBar" destination="eXF-Gd-RKt" id="OBn-rn-EX2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="350"/>
         </scene>
     </scenes>
 </document>
