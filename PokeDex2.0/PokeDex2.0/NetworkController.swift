@@ -32,7 +32,7 @@ class NetworkController {
                 completion(data: data, error: error)
             }
         }
-        
+
         dataTask.resume()
     }
     

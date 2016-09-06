@@ -20,8 +20,7 @@ struct Pokemon {
     var ID: Int
     var Abilities: [String]
     var spriteEndpoint: String
-    
-    
+
     init?(dictionary: [String: AnyObject]) {
         guard let name = dictionary[kName] as? String,
             id = dictionary[kID] as? Int,
